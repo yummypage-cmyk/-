@@ -4,8 +4,8 @@ export const INITIAL_CONFIG: SiteConfig = {
   heroTitle: "합격의 압도적 차이, 몰입의 깊이로 증명합니다",
   heroSubtitle: "서울고시학원 20년 관리 노하우와 프리미엄 AI 몰입 시스템이 만났습니다. 당신의 시작과 끝을 함께하는 합격연구소.",
   primaryColor: "#B71C1C",
-  contactPhone: "02-123-4567",
-  address: "서울특별시 동작구 노량진로 123 서울고시학원 빌딩 4층",
+  contactPhone: "055-753-7774",
+  address: "진주시 동진로 28 서울고시학원 엠코아빌딩 4층",
   kakaoUrl: "https://pf.kakao.com/_example",
 };
 
