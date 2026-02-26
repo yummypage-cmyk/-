@@ -4,10 +4,11 @@ import {
   Menu, X, Phone, MapPin, MessageSquare, 
   ShieldCheck, Clock, Smartphone, LayoutDashboard, 
   Settings, FileText, Plus, 
-  Trash2, Edit3, Save, LogOut, ChevronRight
+  Trash2, Edit3, Save, LogOut, ChevronRight,
+  Award, BookOpen
 } from 'lucide-react';
 import { Post, SiteConfig, ViewMode } from './types';
-import { INITIAL_CONFIG, INITIAL_POSTS } from './constants';
+import { INITIAL_CONFIG, INITIAL_POSTS, SYSTEM_FEATURES } from './constants';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('user');
@@ -190,9 +191,9 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/study-hero/1920/1080?blur=2" 
+            src="https://picsum.photos/seed/itall-hero/1920/1080?blur=1" 
             alt="Hero Background" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-30"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
@@ -204,23 +205,23 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full mb-6 tracking-widest uppercase">
-              Premium Immersion Academy
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-white text-[10px] font-black rounded-full mb-8 tracking-[0.2em] uppercase shadow-lg shadow-primary/20">
+              <Award size={12} /> 2027 Recruitment Open
+            </div>
+            <h1 className="text-5xl md:text-8xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tighter">
               {config.heroTitle.split(' ').map((word, i) => (
-                <span key={i} className={word === '합격,' ? 'text-primary' : ''}>{word} </span>
+                <span key={i} className={word.includes('2027') || word.includes('압도적') ? 'text-primary' : ''}>{word} </span>
               ))}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-medium">
+            <p className="text-lg md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
               {config.heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#contact" className="w-full sm:w-auto px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
-                상담 신청하기 <ChevronRight size={18} />
+              <a href="#contact" className="w-full sm:w-auto px-12 py-5 bg-primary text-white font-black rounded-full hover:bg-primary-dark transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-3 text-lg">
+                입학 예약하기 <ChevronRight size={20} />
               </a>
-              <a href="#system" className="w-full sm:w-auto px-10 py-4 bg-white border border-gray-200 text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
-                시스템 자세히 보기
+              <a href="#system" className="w-full sm:w-auto px-12 py-5 bg-white border-2 border-gray-900 text-gray-900 font-black rounded-full hover:bg-gray-900 hover:text-white transition-all flex items-center justify-center gap-3 text-lg">
+                몰입 시스템 확인
               </a>
             </div>
           </motion.div>
@@ -229,6 +230,63 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-400">
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
             <div className="w-1 h-2 bg-gray-300 rounded-full mt-2" />
+          </div>
+        </div>
+      </section>
+
+      {/* Recruitment Details (Itall Style) */}
+      <section className="py-24 bg-primary text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                2027학년도 <br />
+                스파르타/몰입관 <br />
+                <span className="text-white/60">재수정규반 모집</span>
+              </h2>
+              <div className="space-y-6 mb-12">
+                <div className="flex items-center gap-4 p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                  <Clock className="text-white" size={24} />
+                  <div>
+                    <div className="text-xs font-bold text-white/60 uppercase tracking-widest">Registration Period</div>
+                    <div className="text-lg font-bold">2026년 2월 19일(목) ~ 4월 17일(금)</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                  <Award className="text-white" size={24} />
+                  <div>
+                    <div className="text-xs font-bold text-white/60 uppercase tracking-widest">Special Benefit</div>
+                    <div className="text-lg font-bold">기간 내 결제 및 등원 시 수강료 최대 20% 할인</div>
+                  </div>
+                </div>
+              </div>
+              <button className="px-12 py-5 bg-white text-primary font-black rounded-full hover:bg-gray-100 transition-all shadow-2xl flex items-center gap-3 text-lg">
+                지금 바로 신청하기 <ChevronRight size={20} />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
+                  <h4 className="text-xl font-bold mb-2">재수생</h4>
+                  <p className="text-sm text-white/60">작년의 아쉬움을 압도적 몰입으로 극복하고 싶은 학생</p>
+                </div>
+                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
+                  <h4 className="text-xl font-bold mb-2">반수생</h4>
+                  <p className="text-sm text-white/60">대학 생활과 병행하며 효율적인 합격 전략이 필요한 학생</p>
+                </div>
+              </div>
+              <div className="pt-12 space-y-4">
+                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
+                  <h4 className="text-xl font-bold mb-2">독학재수</h4>
+                  <p className="text-sm text-white/60">강의보다 스스로의 공부 시간이 절대적으로 필요한 학생</p>
+                </div>
+                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
+                  <h4 className="text-xl font-bold mb-2">고시생</h4>
+                  <p className="text-sm text-white/60">공무원, 전문직 시험 등 장기전을 준비하는 수험생</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -288,39 +346,37 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
       </section>
 
       {/* System Section */}
-      <section id="system" className="py-24 bg-white">
+      <section id="system" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black mb-4">압도적 합격을 만드는 3대 관리 시스템</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">의지만으로는 부족합니다. 합격할 수밖에 없는 환경을 강제로 만듭니다.</p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">잇올이 선택받는 이유, <br className="hidden md:block" /><span className="text-primary">압도적 몰입 시스템</span></h2>
+            <p className="text-gray-500 max-w-3xl mx-auto text-lg">단순한 자습 공간을 넘어, 합격을 위한 모든 요소를 데이터로 관리합니다.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: <ShieldCheck className="text-primary" size={32} />, 
-                title: "24/7 밀착 생활 관리", 
-                desc: "지정된 학습 시간 외 이동 금지, 엄격한 출결 체크 및 상벌점 제도를 운영합니다." 
-              },
-              { 
-                icon: <Smartphone className="text-primary" size={32} />, 
-                title: "디지털 디톡스", 
-                desc: "등원 시 스마트폰 의무 제출 및 학습 사이트 외 유해 사이트 차단 시스템을 가동합니다." 
-              },
-              { 
-                icon: <Clock className="text-primary" size={32} />, 
-                title: "교시제 운영", 
-                desc: "실제 시험 시간과 동일한 학습 패턴을 유지하여 실전 감각을 극대화합니다." 
-              }
-            ].map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SYSTEM_FEATURES.map((item, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ y: -10 }}
-                className="p-10 bg-gray-50 rounded-3xl border border-gray-100 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100 hover:bg-primary hover:border-primary transition-all duration-500"
               >
-                <div className="mb-6">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <div className="flex justify-between items-start mb-8">
+                  <div className="p-4 bg-white rounded-2xl group-hover:bg-white/20 transition-colors">
+                    {item.icon === 'ShieldCheck' && <ShieldCheck className="text-primary group-hover:text-white" size={28} />}
+                    {item.icon === 'BookOpen' && <BookOpen className="text-primary group-hover:text-white" size={28} />}
+                    {item.icon === 'LayoutDashboard' && <LayoutDashboard className="text-primary group-hover:text-white" size={28} />}
+                    {item.icon === 'Smartphone' && <Smartphone className="text-primary group-hover:text-white" size={28} />}
+                  </div>
+                  <span className="text-[10px] font-black text-primary group-hover:text-white/80 uppercase tracking-widest bg-white px-3 py-1 rounded-full group-hover:bg-white/10">
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="text-xs font-bold text-primary group-hover:text-white/60 mb-2">{item.subtitle}</div>
+                <h3 className="text-2xl font-black mb-4 group-hover:text-white">{item.title}</h3>
+                <p className="text-gray-600 group-hover:text-white/80 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
