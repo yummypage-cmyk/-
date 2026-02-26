@@ -109,6 +109,16 @@ export default function App() {
               <a href="#facilities" onClick={() => setIsMenuOpen(false)}>학습 시설</a>
               <a href="#posts" onClick={() => setIsMenuOpen(false)}>합격 수기</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)}>상담 및 위치</a>
+              <button 
+                onClick={() => {
+                  setViewMode(viewMode === 'user' ? 'admin' : 'user');
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center gap-2 text-primary pt-4 border-t border-gray-100"
+              >
+                {viewMode === 'user' ? <LayoutDashboard size={20} /> : <LogOut size={20} />}
+                {viewMode === 'user' ? '관리자 모드' : '사용자 모드'}
+              </button>
             </div>
           </motion.div>
         )}
