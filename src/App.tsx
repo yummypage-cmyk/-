@@ -188,7 +188,7 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-40 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://picsum.photos/seed/itall-hero/1920/1080?blur=1" 
@@ -205,12 +205,9 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-white text-[10px] font-black rounded-full mb-8 tracking-[0.2em] uppercase shadow-lg shadow-primary/20">
-              <Award size={12} /> 2027 Recruitment Open
-            </div>
             <h1 className="text-5xl md:text-8xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tighter">
               {config.heroTitle.split(' ').map((word, i) => (
-                <span key={i} className={word.includes('2027') || word.includes('압도적') ? 'text-primary' : ''}>{word} </span>
+                <span key={i} className={word.includes('압도적') ? 'text-primary' : ''}>{word} </span>
               ))}
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -234,30 +231,23 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
         </div>
       </section>
 
-      {/* Recruitment Details (Itall Style) */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
+      {/* Recruitment Details */}
+      <section className="py-24 bg-gray-900 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
-                2027학년도 <br />
-                스파르타/몰입관 <br />
-                <span className="text-white/60">재수정규반 모집</span>
+                합격연구소 <br />
+                몰입독학관 <br />
+                <span className="text-white/60">공무원 합격반 모집</span>
               </h2>
               <div className="space-y-6 mb-12">
-                <div className="flex items-center gap-4 p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
-                  <Clock className="text-white" size={24} />
-                  <div>
-                    <div className="text-xs font-bold text-white/60 uppercase tracking-widest">Registration Period</div>
-                    <div className="text-lg font-bold">2026년 2월 19일(목) ~ 4월 17일(금)</div>
-                  </div>
-                </div>
                 <div className="flex items-center gap-4 p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
                   <Award className="text-white" size={24} />
                   <div>
                     <div className="text-xs font-bold text-white/60 uppercase tracking-widest">Special Benefit</div>
-                    <div className="text-lg font-bold">기간 내 결제 및 등원 시 수강료 최대 20% 할인</div>
+                    <div className="text-lg font-bold">빠른 등원 시 수강료 최대 30% 할인 혜택</div>
                   </div>
                 </div>
               </div>
@@ -265,26 +255,30 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
                 지금 바로 신청하기 <ChevronRight size={20} />
               </button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
-                  <h4 className="text-xl font-bold mb-2">재수생</h4>
-                  <p className="text-sm text-white/60">작년의 아쉬움을 압도적 몰입으로 극복하고 싶은 학생</p>
-                </div>
-                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
-                  <h4 className="text-xl font-bold mb-2">반수생</h4>
-                  <p className="text-sm text-white/60">대학 생활과 병행하며 효율적인 합격 전략이 필요한 학생</p>
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">행정직</h4>
+                <p className="text-sm text-white/60">일반행정, 교육행정 등 행정직군 완벽 대비</p>
               </div>
-              <div className="pt-12 space-y-4">
-                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
-                  <h4 className="text-xl font-bold mb-2">독학재수</h4>
-                  <p className="text-sm text-white/60">강의보다 스스로의 공부 시간이 절대적으로 필요한 학생</p>
-                </div>
-                <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
-                  <h4 className="text-xl font-bold mb-2">고시생</h4>
-                  <p className="text-sm text-white/60">공무원, 전문직 시험 등 장기전을 준비하는 수험생</p>
-                </div>
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">소방직</h4>
+                <p className="text-sm text-white/60">소방공무원 필기 및 체력 관리를 위한 몰입 환경</p>
+              </div>
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">경찰직</h4>
+                <p className="text-sm text-white/60">경찰공무원 채용 시험 최적화 학습 시스템</p>
+              </div>
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">기술직</h4>
+                <p className="text-sm text-white/60">보건, 토목, 건축 등 기술직군 전공 과목 집중 관리</p>
+              </div>
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">임용</h4>
+                <p className="text-sm text-white/60">유치원, 초등, 중등 교원 임용 시험 대비</p>
+              </div>
+              <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-bold mb-2">편입</h4>
+                <p className="text-sm text-white/60">상위권 대학 편입을 위한 압도적 학습량 확보</p>
               </div>
             </div>
           </div>
@@ -349,7 +343,7 @@ function UserView({ config, posts, activeTab, setActiveTab }: {
       <section id="system" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">잇올이 선택받는 이유, <br className="hidden md:block" /><span className="text-primary">압도적 몰입 시스템</span></h2>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">합격연구소가 선택받는 이유, <br className="hidden md:block" /><span className="text-primary">압도적 몰입 시스템</span></h2>
             <p className="text-gray-500 max-w-3xl mx-auto text-lg">단순한 자습 공간을 넘어, 합격을 위한 모든 요소를 데이터로 관리합니다.</p>
           </div>
           

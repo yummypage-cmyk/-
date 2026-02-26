@@ -1,7 +1,7 @@
 import { Post, SiteConfig } from './types';
 
 export const INITIAL_CONFIG: SiteConfig = {
-  heroTitle: "2027학년도 합격의 압도적 차이, 몰입의 깊이로 증명합니다",
+  heroTitle: "합격의 압도적 차이, 몰입의 깊이로 증명합니다",
   heroSubtitle: "서울고시학원 20년 관리 노하우와 프리미엄 AI 몰입 시스템이 만났습니다. 당신의 시작과 끝을 함께하는 합격연구소.",
   primaryColor: "#B71C1C",
   contactPhone: "02-123-4567",
@@ -43,15 +43,15 @@ export const SYSTEM_FEATURES = [
 export const INITIAL_POSTS: Post[] = [
   {
     id: '1',
-    title: '[모집] 2027학년도 공무원 시험 대비 재수/반수 정규반 모집',
-    content: '압도적 합격 실적으로 증명된 몰입독학관의 2027학년도 정규반 모집이 시작되었습니다. 선착순 장학 혜택을 확인하세요.',
+    title: '[모집] 공무원 합격반 모집',
+    content: '압도적 합격 실적으로 증명된 몰입독학관의 정규반 모집이 시작되었습니다. 선착순 장학 혜택을 확인하세요.',
     category: 'notice',
     date: '2026-02-25',
     imageUrl: 'https://picsum.photos/seed/itall-recruit/800/600',
   },
   {
     id: '2',
-    title: '9급 일반행정직 수석 합격 - "잇올 시스템이 만든 기적"',
+    title: '9급 일반행정직 수석 합격 - "몰입 관리 시스템이 만든 기적"',
     content: '하루 14시간 순공 시간 확보, 휴대폰 통제, 그리고 매주 진행된 모의고사가 저를 수석으로 이끌었습니다.',
     category: 'success',
     date: '2026-02-15',
@@ -67,7 +67,7 @@ export const INITIAL_POSTS: Post[] = [
   },
   {
     id: '4',
-    title: '2027 대비 국어/영어/한국사 핵심 요약집 배포 안내',
+    title: '공무원 시험 대비 국어/영어/한국사 핵심 요약집 배포 안내',
     content: '재원생 전원에게 제공되는 과목별 핵심 요약집과 최신 기출 트렌드 분석 리포트를 확인하세요.',
     category: 'guide',
     date: '2026-02-05',
